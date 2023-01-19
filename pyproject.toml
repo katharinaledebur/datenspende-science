@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "datascience-template"
+name = "datenspende"
 version = "0.1.0"
-description = "Template project for datascience on Jupyterhub @ ROCS"
-authors = ["Jakob J. Kolb <jakob.j.kolb@gmail.com>"]
+description = "Project for Corona-Datenspende science and ml code"
+authors = ["David Hinrichs <dvd.hnrchs@gmail.com>", "Jakob J. Kolb <jakob.j.kolb@gmail.com>"]
 readme = "README.md"
-packages = [{include = "datascience_template"}]
+packages = [{include = "datenspende"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
