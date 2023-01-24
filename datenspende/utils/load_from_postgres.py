@@ -33,18 +33,18 @@ def connect_to_db(credentials: DBCredentials) -> Connection:
     return psycopg.connect(**credentials)
 
 
-def teardown_db_connection(connection: Connection) -> Connection:
+def teardown_pg_db_connection(connection: Connection) -> Connection:
     connection.commit()
     connection.close()
     return connection
 
 
-def query_df(query: str | SQL | Composed) -> pd.DataFrame:
+def query_pg_df(query: str | SQL | Composed) -> pd.DataFrame:
     try:
-        conn = create_db_connection()
+        conn = create_pg_db_connection()
         return pd.read_sql(query, conn)
     finally:
-        teardown_db_connection(conn)
+        teardown_pg_db_connection(conn)
 
 
-create_db_connection = R.pipe(read_db_credentials_from_env, connect_to_db)
+create_pg_db_connection = R.pipe(read_db_credentials_from_env, connect_to_db)
