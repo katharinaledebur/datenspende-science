@@ -16,6 +16,7 @@ ipykernel = "^6.16.0"
 clickhouse-driver = "^0.2.5"
 dagster = "^1.1.13"
 dagit = "^1.1.13"
+clickhouse-connect = "^0.5.3"
 
 
 [tool.poetry.group.dev.dependencies]
