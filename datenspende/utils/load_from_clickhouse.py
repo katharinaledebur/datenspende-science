@@ -20,6 +20,7 @@ def read_db_credentials_from_env() -> DBCredentials:
         "database": environ.get("CLICKHOUSE_DB"),
         "host": environ.get("CLICKHOUSE_HOST"),
         "port": 8123, #this port is currently necessary for connections via get_client
+        "query_limit": 0, #otherwise limits to 5k rows
     }
 
 
